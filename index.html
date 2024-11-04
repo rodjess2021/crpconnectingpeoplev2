@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRP Connecting People</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden; /* Evita el scroll horizontal */
+    }
+
+    /* Ajustes para dispositivos móviles */
+    @media (max-width: 767px) {
+      #home {
+        padding-top: 120px; /* Ajusta según la altura de tu navbar */
+      }
+      .hero h1 {
+        font-size: 8vw; /* Ajusta el tamaño de la fuente para que se vea mejor en pantallas pequeñas */
+      }
+    }
+  </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="img/crp-logo-1.png" alt="CRP Logo" class="img-fluid" style="width: 180px;" loading="lazy">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#quienes">Quienes Somos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contactos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#search">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+  <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+  <path d="M21 21l-6 -6" />
+</svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container-fluid p-0">
+        <section id="home" class="hero text-center">
+            <div class="position-relative">
+                <img class="bg-image img-fluid w-100" src="img/portada-crp.png" loading="lazy" alt="">
+                <div class="position-absolute top-50 start-50 translate-middle text-dark text-center" style="font-size: 5vw;">
+                    <h1 class="mb-0" style="font-weight: 600; font-size: 2.5rem">Compromiso.</h1>
+                    <h1 class="mb-0" style="font-weight: 600; font-size: 2.5rem;">Valores éticos.</h1>
+                    <h1 class="mb-0" style="font-weight: 600; font-size: 2.5rem;">Innovación.</h1>
+                </div>
+            </div>
+        </section>
+        
+      <section id="quienes" class="text-light w-100 position-relative" style="background-image: url('./img/portada-conecxa.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+        <div class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(30, 30, 36, 0.884);"></div> <!-- Difuminado gris -->
+          <div class="container position-relative z-index-1" style="padding: 50px 0;">
+            <div class="row align-items-center text-center text-md-start">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <h2 class="mb-4 fs-1">¿QUIENES SOMOS?</h2>
+                </div>
+                <div class="col-md-6">
+                      <p class="lead">
+                        En CRP Connecting People, nos especializamos en ofrecer soluciones integrales de call center que van más allá de la simple comunicación: nuestra misión es conectar a las personas de manera significativa, promoviendo relaciones basadas en la confianza, la empatía y el respeto. Somos un equipo comprometido en ser el puente que une a nuestros clientes con sus consumidores, generando experiencias positivas y duraderas en cada interacción.
+                    </p>
+                    <p class="lead">
+                        Entendemos que cada contacto es una oportunidad para impactar y marcar la diferencia. Por eso, en CRP Connecting People, priorizamos la calidad y el trato humano en cada llamada, mensaje y conversación. Nuestra meta es no solo resolver consultas o problemas, sino brindar a cada cliente una experiencia memorable y personalizada que construya lealtad y valor a largo plazo.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+<section class="my-5">
+    <div class="text-start text-md-start text-center">
+        <h1 class="ms-3 ms-md-5">
+            <span class="text-decoration-underline">N</span>uestros valores
+        </h1>
+    </div>
+</section>
+
+<div class="container-fluid px-lg-5"> <!-- Ajuste de padding en pantallas grandes -->
+    <div class="row align-items-start">
+        <!-- Columna izquierda con la imagen -->
+        <div class="col-lg-6 d-flex justify-content-center">
+            <img src="img/valores-crp.png" 
+                 class="img-fluid" 
+                 style="max-width: 95%; max-height: 500px; object-fit: cover; margin-left: 5%;"> <!-- Ajuste de margen y altura -->
+        </div>
+
+        <!-- Columna derecha con los textos de los valores -->
+        <div class="col-lg-6">
+            <div class="ml-lg-4"> <!-- Ajuste de margen izquierdo en desktop -->
+                <h3>Compromiso</h3>
+                <p class="small">Valoramos profundamente el compromiso con nuestros clientes, empleados y socios estratégicos. En CRP Connecting People, cumplimos nuestras promesas y responsabilidades, liderando con el ejemplo para inspirar un entorno de respeto y responsabilidad compartida.</p>
+                <hr class="my-4" style="width: 80%;">
+            </div>
+        
+            <div class="ml-lg-4">
+                <h3>Innovación</h3>
+                <p class="small">La búsqueda de soluciones creativas y eficaces forma parte de nuestro ADN. Apostamos por la innovación constante y nos mantenemos al tanto de las últimas tecnologías y metodologías para mejorar nuestro servicio, enfrentar nuevos desafíos y anticiparnos a las necesidades del mercado. Creemos que la transformación digital es fundamental para ofrecer un servicio de excelencia.</p>
+                <hr class="my-4" style="width: 80%;">
+            </div>
+        
+            <div class="ml-lg-4">
+                <h3>Excelencia</h3>
+                <p class="small">Nuestra visión de excelencia se refleja en cada detalle de nuestro trabajo. Nos esforzamos continuamente para optimizar cada aspecto de nuestros servicios, garantizando una ejecución impecable en cada proyecto. La excelencia en CRP Connecting People es sinónimo de resultados tangibles y de satisfacción total para nuestros clientes y sus consumidores.</p>
+                <hr class="my-4" style="width: 80%;">
+            </div>
+        
+            <div class="ml-lg-4">
+                <h3>Integridad e Inclusión</h3>
+                <p class="small">Promovemos un ambiente de trabajo ético y transparente, donde la confianza y el respeto son esenciales. Creemos firmemente en la inclusión, en la diversidad de ideas y en la importancia de un entorno laboral en el que todos tengan las mismas oportunidades para crecer y contribuir.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="container-fluid p-0 my-5">
+    <div class="row g-0">
+        <!-- Columna izquierda con la imagen -->
+        <div class="col-lg-6 col-12 p-0" style="min-height: 600px;">
+            <img src="img/trabaja-con-nostros-crp.png" 
+                 class="img-fluid w-100 h-100" 
+                 style="object-fit: cover;"
+                 loading="lazy" 
+                 alt="Equipo">
+        </div>
+
+        <!-- Columna derecha con el texto sobre un fondo gris oscuro -->
+        <div class="col-lg-6 col-12 d-flex align-items-center" style="background-color: #383838; min-height: 600px;">
+            <div class="d-flex flex-column justify-content-center align-items-start p-5 text-white" style="height: 100%;">
+                <h2 class="display-4" style="font-weight: 500; color: rgb(255, 255, 255);">
+                    ¿Te gustaria formar <br> parte de nuestro <br> equipo?
+                </h2>
+                <!-- Línea blanca gruesa debajo del encabezado -->
+                <hr style="border: 4px solid rgb(255, 255, 255); width: 4%; margin-left: 0;">
+                <p class="lead mt-4" style="font-weight: 300; color: white;">
+                    En CRP Connecting People, buscamos personas apasionadas y comprometidas que compartan nuestra visión de brindar un servicio de calidad y crear conexiones que importen. Si deseas formar parte de un equipo que valora la innovación, la integridad y la excelencia, te invitamos a descubrir nuestras oportunidades de empleo y unirte a una empresa que se enorgullece de hacer la diferencia en cada llamada. ¡Únete a nosotros y ayúdanos a conectar personas de manera significativa!
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+      <section id="contact" class="container py-5">
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <h4 class="fs-1">
+              <span class="text-decoration-underline">C</span>ontáctanos
+            </h4>
+            <p class="">Si tienes alguna pregunta, comentario o necesitas asistencia <br> adicional, no dudes en contactarnos. Estamos aquí para <br> ayudarte en lo que necesites.</p>
+            <p class="mt-4"><strong>Nos encuentras en:</strong><br>Av. Circunvalación del Golf de los Incas 134 Surco</p>
+          </div>
+          
+          <div class="col-md-6">
+            <form>
+                <div class="row">
+                    <!-- Primera columna interna -->
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombres y Apellidos</label>
+                            <input style="background-color: #343a40; color: white;" type="text" id="nombre" class="form-control input-dark rounded" placeholder="Nombres y Apellidos" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="telefono" class="form-label">Teléfono</label>
+                            <input style="background-color: #343a40; color: white;" type="tel" id="telefono" class="form-control input-dark" placeholder="Teléfono" required>
+                        </div>
+                    </div>
+
+                    <!-- Segunda columna interna -->
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="correo" class="form-label">Correo</label>
+                            <input style="background-color: #343a40; color: white;" type="email" id="correo" class="form-control input-dark" placeholder="Correo" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="mensaje" class="form-label">Mensaje</label>
+                            <input style="background-color: #343a40; color: white;" type="text" id="mensaje" class="form-control input-dark" placeholder="Mensaje" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6  mt-3">
+                      <button type="submit" class="btn btn-dark w-100">Enviar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="text-center bg-warning py-2   text-dark">
+      <p class="small mt-2  ">&copy; CRP CONNECTING PEOPLE 2024</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
