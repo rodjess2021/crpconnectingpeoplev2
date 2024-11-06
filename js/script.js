@@ -7,8 +7,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     const targetElement = document.querySelector(targetId);
 
     if (targetElement) {
-      const offsetPosition = targetElement.offsetTop - 80;
-
+      const offsetPosition = targetElement.offsetTop - 80; // Ajustar según altura navbar
       window.scrollTo({
         top: offsetPosition,
         behavior: 'smooth'
@@ -25,45 +24,30 @@ window.addEventListener('load', () => {
 
     setTimeout(() => {
       splashScreen.style.display = 'none';
-      applyScrollReveal(); 
-    }, 500); 
-  }, 2000); 
+      iniciarScrollReveal();
+    }, 500);
+  }, 2000);
 });
 
-function applyScrollReveal() {
-  const baseConfig = {
-    distance: window.matchMedia("(max-width: 767px)").matches ? '30px' : '50px',
-    duration: 800,
-    delay: 200,
-    reset: false  // Cambiado a false para dispositivos móviles
-  };
-
-  ScrollReveal().reveal('.value-title', {
-    ...baseConfig,
-    origin: 'top',
-    delay: 300,
-  });
-
-  ScrollReveal().reveal('.value-paragraph', {
-    ...baseConfig,
-    origin: 'bottom',
-    delay: 400,
-  });
+function iniciarScrollReveal() {
+  const isMobile = window.matchMedia("(max-width: 767px)").matches;
 
   const scrollRevealConfigLeft = {
     origin: 'left',
-    distance: window.matchMedia("(max-width: 767px)").matches ? '50px' : '100px',
+    distance: isMobile ? '50px' : '100px',
     duration: 800,
     delay: 200,
-    reset: false // Cambiado a false
+    reset: !isMobile,
+    once: isMobile // Aplica solo una vez en móviles
   };
 
   const scrollRevealConfigRight = {
     origin: 'right',
-    distance: window.matchMedia("(max-width: 767px)").matches ? '50px' : '100px',
+    distance: isMobile ? '50px' : '100px',
     duration: 800,
     delay: 200,
-    reset: false // Cambiado a false
+    reset: !isMobile,
+    once: isMobile
   };
 
   ScrollReveal().reveal('.slide-in-left', scrollRevealConfigLeft);
@@ -74,7 +58,8 @@ function applyScrollReveal() {
     distance: '50px',
     duration: 1000,
     delay: 200,
-    reset: false
+    reset: !isMobile,
+    once: isMobile
   });
 
   ScrollReveal().reveal('.team-section-paragraph', {
@@ -82,7 +67,8 @@ function applyScrollReveal() {
     distance: '50px',
     duration: 1000,
     delay: 400,
-    reset: false
+    reset: !isMobile,
+    once: isMobile
   });
 
   ScrollReveal().reveal('.contact-title', {
@@ -90,7 +76,8 @@ function applyScrollReveal() {
     distance: '70px',
     duration: 1000,
     delay: 200,
-    reset: false
+    reset: !isMobile,
+    once: isMobile
   });
 
   ScrollReveal().reveal('.contact-paragraph', {
@@ -98,7 +85,8 @@ function applyScrollReveal() {
     distance: '70px',
     duration: 1000,
     delay: 400,
-    reset: false
+    reset: !isMobile,
+    once: isMobile
   });
 
   ScrollReveal().reveal('.contact-form', {
@@ -106,8 +94,7 @@ function applyScrollReveal() {
     distance: '70px',
     duration: 1000,
     delay: 600,
-    reset: false
+    reset: !isMobile,
+    once: isMobile
   });
 }
-
-window.addEventListener('resize', applyScrollReveal);
