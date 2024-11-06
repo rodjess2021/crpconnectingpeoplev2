@@ -43,19 +43,70 @@ function isInViewport(element) {
   );
 }
 
-// Inicializar ScrollReveal y configurar los efectos
-ScrollReveal().reveal('.slide-in-left', {
-  origin: 'left',
-  distance: '100px',
+// Configuración para elementos que deslizan desde la izquierda
+function applyScrollReveal() {
+  const scrollRevealConfigLeft = {
+      origin: 'left',
+      distance: window.matchMedia("(max-width: 767px)").matches ? '50px' : '100px', // Reducir la distancia en móviles
+      duration: 800,
+      delay: 200,
+      reset: true // Para asegurarse de que el efecto se vea cada vez que se desliza
+  };
+
+  const scrollRevealConfigRight = {
+      origin: 'right',
+      distance: window.matchMedia("(max-width: 767px)").matches ? '50px' : '100px', // Reducir la distancia en móviles
+      duration: 800,
+      delay: 200,
+      reset: true
+  };
+
+  ScrollReveal().reveal('.slide-in-left', scrollRevealConfigLeft);
+  ScrollReveal().reveal('.slide-in-right', scrollRevealConfigRight);
+}
+
+applyScrollReveal();
+
+// Configurar ScrollReveal para la sección "¿Te gustaría formar parte de nuestro equipo?"
+ScrollReveal().reveal('.team-section-title', {
+  origin: 'top',
+  distance: '50px',
   duration: 1000,
   delay: 200,
-  reset: false
+  reset: true
 });
 
-ScrollReveal().reveal('.slide-in-right', {
-  origin: 'right',
-  distance: '100px',
+ScrollReveal().reveal('.team-section-paragraph', {
+  origin: 'bottom',
+  distance: '50px',
+  duration: 1000,
+  delay: 400,
+  reset: true
+});
+
+// Configurar ScrollReveal para la sección "Contáctanos"
+ScrollReveal().reveal('.contact-title', {
+  origin: 'left',
+  distance: '70px',
   duration: 1000,
   delay: 200,
-  reset: false
+  reset: true
 });
+
+ScrollReveal().reveal('.contact-paragraph', {
+  origin: 'left',
+  distance: '70px',
+  duration: 1000,
+  delay: 400,
+  reset: true
+});
+
+ScrollReveal().reveal('.contact-form', {
+  origin: 'right',
+  distance: '70px',
+  duration: 1000,
+  delay: 600,
+  reset: true
+});
+
+window.addEventListener('resize', applyScrollReveal); // Volver a aplicar las configuraciones al cambiar el tamaño
