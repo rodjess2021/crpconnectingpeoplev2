@@ -28,85 +28,96 @@ window.addEventListener('load', () => {
       // Espera la transición antes de ocultar el elemento completamente
       setTimeout(() => {
           splashScreen.style.display = 'none';
+          // Inicializar ScrollReveal después de que desaparezca el splash screen
+          applyScrollReveal();
       }, 500); // Debe coincidir con la duración de la transición
   }, 2000); // Tiempo que el splash screen estará visible (2 segundos)
 });
 
 // Función para verificar si un elemento está en el viewport
-function isInViewport(element) {
-  const rect = element.getBoundingClientRect();
-  return (
-      rect.top >= 0 &&
-      rect.left >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-  );
-}
-
-// Configuración para elementos que deslizan desde la izquierda
 function applyScrollReveal() {
+  // Configuración general de ScrollReveal para los efectos de deslizamiento
+  const baseConfig = {
+    distance: window.matchMedia("(max-width: 767px)").matches ? '30px' : '50px',
+    duration: 800,
+    delay: 200,
+    reset: true
+  };
+
+  // Efectos para subtítulos y párrafos en "Nuestros valores"
+  ScrollReveal().reveal('.value-title', {
+    ...baseConfig,
+    origin: 'top',
+    delay: 300,
+  });
+
+  ScrollReveal().reveal('.value-paragraph', {
+    ...baseConfig,
+    origin: 'bottom',
+    delay: 400,
+  });
+
+  // Efectos para otros elementos de la página
   const scrollRevealConfigLeft = {
-      origin: 'left',
-      distance: window.matchMedia("(max-width: 767px)").matches ? '50px' : '100px', // Reducir la distancia en móviles
-      duration: 800,
-      delay: 200,
-      reset: true // Para asegurarse de que el efecto se vea cada vez que se desliza
+    origin: 'left',
+    distance: window.matchMedia("(max-width: 767px)").matches ? '50px' : '100px',
+    duration: 800,
+    delay: 200,
+    reset: true
   };
 
   const scrollRevealConfigRight = {
-      origin: 'right',
-      distance: window.matchMedia("(max-width: 767px)").matches ? '50px' : '100px', // Reducir la distancia en móviles
-      duration: 800,
-      delay: 200,
-      reset: true
+    origin: 'right',
+    distance: window.matchMedia("(max-width: 767px)").matches ? '50px' : '100px',
+    duration: 800,
+    delay: 200,
+    reset: true
   };
 
   ScrollReveal().reveal('.slide-in-left', scrollRevealConfigLeft);
   ScrollReveal().reveal('.slide-in-right', scrollRevealConfigRight);
+
+  // Sección "¿Te gustaría formar parte de nuestro equipo?"
+  ScrollReveal().reveal('.team-section-title', {
+    origin: 'top',
+    distance: '50px',
+    duration: 1000,
+    delay: 200,
+    reset: true
+  });
+
+  ScrollReveal().reveal('.team-section-paragraph', {
+    origin: 'bottom',
+    distance: '50px',
+    duration: 1000,
+    delay: 400,
+    reset: true
+  });
+
+  // Sección "Contáctanos"
+  ScrollReveal().reveal('.contact-title', {
+    origin: 'left',
+    distance: '70px',
+    duration: 1000,
+    delay: 200,
+    reset: true
+  });
+
+  ScrollReveal().reveal('.contact-paragraph', {
+    origin: 'left',
+    distance: '70px',
+    duration: 1000,
+    delay: 400,
+    reset: true
+  });
+
+  ScrollReveal().reveal('.contact-form', {
+    origin: 'right',
+    distance: '70px',
+    duration: 1000,
+    delay: 600,
+    reset: true
+  });
 }
-
-applyScrollReveal();
-
-// Configurar ScrollReveal para la sección "¿Te gustaría formar parte de nuestro equipo?"
-ScrollReveal().reveal('.team-section-title', {
-  origin: 'top',
-  distance: '50px',
-  duration: 1000,
-  delay: 200,
-  reset: true
-});
-
-ScrollReveal().reveal('.team-section-paragraph', {
-  origin: 'bottom',
-  distance: '50px',
-  duration: 1000,
-  delay: 400,
-  reset: true
-});
-
-// Configurar ScrollReveal para la sección "Contáctanos"
-ScrollReveal().reveal('.contact-title', {
-  origin: 'left',
-  distance: '70px',
-  duration: 1000,
-  delay: 200,
-  reset: true
-});
-
-ScrollReveal().reveal('.contact-paragraph', {
-  origin: 'left',
-  distance: '70px',
-  duration: 1000,
-  delay: 400,
-  reset: true
-});
-
-ScrollReveal().reveal('.contact-form', {
-  origin: 'right',
-  distance: '70px',
-  duration: 1000,
-  delay: 600,
-  reset: true
-});
 
 window.addEventListener('resize', applyScrollReveal); // Volver a aplicar las configuraciones al cambiar el tamaño
