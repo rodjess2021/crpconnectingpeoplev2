@@ -71,68 +71,6 @@
         animation: fadeIn 1.5s ease; /* Efecto de desvanecido del logo */
     }
 
-    .blur-overlay {
-    background: rgba(255, 255, 255, 0.5); /* Ajusta la opacidad */
-    backdrop-filter: blur(10px); /* Nivel de desenfoque */
-    z-index: 1; /* Debe estar debajo del texto */
-}
-.typing-effect {
-    display: inline-block;
-    font-family: 'Roboto', sans-serif;
-    font-family: monospace;
-    white-space: nowrap;
-    border-right: 4px solid;
-    font-size: 3vw; /* Tamaño de letra responsivo */
-    overflow: hidden;
-}
-
-/* Ajuste de animación para cada frase */
-.typing-compromiso {
-    width: 11ch; /* Ajusta el ancho según el texto */
-    animation: typing-compromiso 4.5s steps(11), blink .5s infinite step-end alternate;
-    font-family: 'Roboto';
-    font-size: 5vw;
-}
-
-.typing-valores {
-    width: 14ch;
-    animation: typing-valores 4.5s steps(14), blink .5s infinite step-end alternate;
-    font-family: 'Roboto';
-    font-size: 5vw;
-}
-
-.typing-innovacion {
-    width: 10ch;
-    animation: typing-innovacion 4.5s steps(10), blink .5s infinite step-end alternate;
-    font-family: 'Roboto';
-    font-size: 5vw;
-}
-
-/* Animaciones individuales para cada frase */
-@keyframes typing-compromiso {
-    from { width: 0; }
-}
-
-@keyframes typing-valores {
-    from { width: 0; }
-}
-
-@keyframes typing-innovacion {
-    from { width: 0; }
-}
-
-/* Animación de parpadeo del cursor */
-@keyframes blink {
-    50% { border-color: transparent; }
-}
-
-/* Capa de desenfoque */
-.blur-overlay {
-    background: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(10px);
-    z-index: 1;
-}
-
     /* Animación de desvanecido */
     @keyframes fadeIn {
         from {
@@ -142,7 +80,6 @@
             opacity: 1;
         }
     }
-
   </style>
 </head>
 <body>
@@ -194,27 +131,16 @@
     </header>
 
     <main class="container-fluid p-0">
-        <section id="home" class="hero text-center pt-5">
+        <section id="home" class="hero text-center">
             <div class="position-relative">
                 <img class="bg-image img-fluid w-100" src="img/portada-crp.png" loading="lazy" alt="">
-                
-                <!-- Capa de desenfoque debajo del texto -->
-                <div class="blur-overlay position-absolute top-0 start-0 w-100 h-100"></div>
-                
-                <!-- Texto centrado con efecto máquina de escribir -->
-                <div class="position-absolute top-50 start-50 translate-middle text-dark text-center" style="z-index: 2;">
-                    <h1 class="mb-0" style="font-weight: 600;">
-                        <span class="typing-effect typing-compromiso">Compromiso</span>
-                    </h1>
-                    <h1 class="mb-0" style="font-weight: 600;">
-                        <span class="typing-effect typing-valores">Valores éticos</span>
-                    </h1>
-                    <h1 class="mb-0" style="font-weight: 600;">
-                        <span class="typing-effect typing-innovacion">Innovación</span>
-                    </h1>
+                <div class="position-absolute top-50 start-50 translate-middle text-dark text-center" style="font-size: 5vw;">
+                    <h1 class="mb-0" style="font-weight: 600; font-size: 2.5rem">Compromiso.</h1>
+                    <h1 class="mb-0" style="font-weight: 600; font-size: 2.5rem;">Valores éticos.</h1>
+                    <h1 class="mb-0" style="font-weight: 600; font-size: 2.5rem;">Innovación.</h1>
                 </div>
             </div>
-        </section>
+        </section>
         
       <section id="quienes" class="text-light w-100 position-relative" style="background-image: url('./img/portada-conecxa.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
         <div class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(30, 30, 36, 0.884);"></div> <!-- Difuminado gris -->
